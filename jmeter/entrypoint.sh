@@ -16,7 +16,10 @@ echo "JVM_ARGS=${JVM_ARGS}"
 echo "jmeter args=$@"
 
 # Keep entrypoint simple: we must pass the standard JMeter arguments
-jmeter $@
+jmeter -n -t "/data-files/test-plan.jmx" \
+        -q "/config/config.properties" \
+        -l "/results/result.jtl" \
+        $@
 echo "END Running Jmeter on `date`"
 
 #     -n \
