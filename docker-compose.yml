@@ -1,14 +1,15 @@
 # Create a docker-compose.yml file to define a "load-test" service
 
 services:
-  load-test:
+  jmeter:
     build:
       context: jmeter
     volumes:
-      - ./config:/config
-      - ./data-files:/data-files
-      - ./results:/results
-    entrypoint: ["/entrypoint.sh"]
+      - ./test-plan.jmx:/root/test-plan.jmx
+      - ./config:/root/config
+      - ./data-files:/root/data-files
+      - ./results/:/root/results/
+      - ./assertion-failures:/root/assertion-failures
     networks:
       - monitoring
 

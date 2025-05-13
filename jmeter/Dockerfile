@@ -52,9 +52,10 @@ RUN mkdir -p /tmp/dependencies  \
 # Set global PATH such that "jmeter" command is found
 ENV PATH=$PATH:$JMETER_BIN
 
-COPY entrypoint.sh /
+COPY entrypoint.sh /root/entrypoint.sh
+RUN chmod +x /root/entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/root/entrypoint.sh"]
 
 
-WORKDIR	${JMETER_HOME}
+WORKDIR	/root

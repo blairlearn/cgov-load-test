@@ -1,0 +1,6 @@
+# About the data
+
+## url-list.csv
+
+Lines 1-39 - hand collected
+Lines 40-550 - data dog "Top 1000" akamai visits to www.cancer.gov, with microsites removed since they're not all on lower tiers.

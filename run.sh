@@ -1,3 +1,5 @@
 #!/bin/bash
 
-docker compose run --remove-orphans load-test
+mkdir -p results
+
+docker compose run --rm --remove-orphans jmeter
