@@ -1,0 +1,8 @@
+# Ignore generated .CSV files
+*.csv
+
+# Keep the list for generating.
+!url-list.csv
+
+# Ignore intermediate "result" files.
+results
