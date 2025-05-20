@@ -38,7 +38,7 @@ tail -n +2 url-list.csv | while IFS=, read -r path rest; do
             size=$(wc -c < "$filename")
 
             # Calculate MD5 hash of the saved file
-            md5=$(md5sum "$filename")
+            md5=$(md5sum "$filename" | cut -d ' ' -f 1)
 
             # Output the results (with no extra whitespace)
             echo "$path,$size,$md5"  | tr -d ' ' >> 200.csv
