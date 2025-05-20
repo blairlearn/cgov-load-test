@@ -20,10 +20,17 @@ path matched expectations.
 Note that the Size assertion is presently disabled as it doesn't report the size of the content body reliably.
 The MD5Hex assertion is, so far, reliable.
 
+Assertions for the 404 status tests will **always** fail.  Because the page being tested doesn't exist.
+
 
 ## Configuration
 
-Paths to generate traffic against are listed in `data-files/url-list.csv`.
+Files containing paths to generate traffic against are listed in `data-files/`.
+
+- `200.csv` - Expected to return status 200, has path, file size, and MD5 hash.
+- `30x.csv` - Expected to return 300-series status.  Path-only
+- `404.csv` - Expected to return status 404.  Path-only
+
 
 There are two configuration points in `config/config.properties`.
 
